@@ -91,6 +91,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-800 p-3 rounded-lg hover:bg-orange-600 transition-colors"
+                aria-label="Open website in new tab"
               >
                 <Instagram size={20} />
               </a>
@@ -99,17 +100,19 @@ export default function Footer({ onNavigate }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-800 p-3 rounded-lg hover:bg-orange-600 transition-colors"
+                aria-label="Open website in new tab"
               >
                 <Facebook size={20} />
               </a>
               <a
-                href="https://share.google/nx4gFYYdioqxu0HND"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 p-3 rounded-lg hover:bg-orange-600 transition-colors"
-              >
-                <Globe size={20} />
-              </a>
+  href="https://share.google/Y0sBn8WEMHjAFcjl7"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-gray-800 p-3 rounded-lg hover:bg-orange-600 transition-colors"
+  aria-label="Open website in new tab"
+>
+  <Globe size={20} />
+</a>
             </div>
             <button
               onClick={() => onNavigate('contact')}
