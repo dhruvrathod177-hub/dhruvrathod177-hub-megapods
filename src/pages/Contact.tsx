@@ -176,7 +176,7 @@ export default function Contact() {
                       +91 87581 76693
                     </a>
                     <a href="tel:+919265380907" className="text-gray-600 hover:text-orange-600 transition-colors block">
-                      +91 9265390907
+                      +91 92653 90907
                     </a>
                   </div>
                 </div>
