@@ -44,54 +44,51 @@ export default function Home({ onNavigate }: HomeProps) {
 
   return (
     <div>
-      <section className="relative bg-gradient-to-br from-orange-50 to-white py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                Transform Spaces with
-                <span className="text-orange-600"> Premium Container Solutions</span>
-              </h1>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Megapods India specializes in innovative container conversions for cafes, offices, public toilets, and custom projects. Build your dream space with our expert modular solutions.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={() => onNavigate('contact')}
-                  className="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-700 transition-colors flex items-center justify-center gap-2"
-                >
-                  Get Free Consultation
-                  <ArrowRight size={20} />
-                </button>
-                <a
-                  href="tel:+918758176693"
-                  className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors flex items-center justify-center gap-2"
-                >
-                  <Phone size={20} />
-                  Call Now
-                </a>
-              </div>
-             
-            </div>
-            <div className="relative">
-              <img
-                src="/img/img.png"
-                alt="Container Solutions"
-                className="
-                            w-full
-                            rounded-2xl
-                            shadow-2xl
-                            border-2 border-transparent
-                            transition-all duration-300
-                            hover:scale-105
-                            hover:border-orange-500"
-  
-/>
-            </div>
-          </div>
-        </div>
-      </section>
+     <section
+  className="relative min-h-[75vh] bg-cover bg-center bg-no-repeat py-16"
+  style={{
+    backgroundImage: "url('/img/img.png')",
+  }}
+>
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
+    <div className="flex flex-col items-center justify-center text-center min-h-[60vh]">
+
+      {/* HEADING */}
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white drop-shadow-lg animate-fade-up">
+        Transform Spaces with{" "}
+        <span className="text-orange-400">Premium Container Solutions</span>
+      </h1>
+
+      {/* DESCRIPTION */}
+      <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-3xl drop-shadow animate-fade-up delay-1">
+        Megapods India specializes in innovative container conversions for
+        cafes, offices, public toilets, and custom projects. Build your dream
+        space with our expert modular solutions.
+      </p>
+
+      {/* BUTTONS */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-2">
+        <button
+          onClick={() => onNavigate("contact")}
+          className="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-700 transition-colors flex items-center justify-center gap-2"
+        >
+          Get Free Consultation
+          <ArrowRight size={20} />
+        </button>
+
+        <a
+          href="tel:+918758176693"
+          className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2"
+        >
+          <Phone size={20} />
+          Call Now
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
