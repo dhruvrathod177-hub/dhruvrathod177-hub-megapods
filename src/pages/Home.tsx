@@ -67,49 +67,60 @@ export default function Home({ onNavigate }: HomeProps) {
   ); 
   return (
     <div>
-    <section
-  className="relative min-h-[75vh] bg-cover bg-center bg-no-repeat py-16"
-  style={{
-    backgroundImage: "url('/img/img.png')",
-  }}
->
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex flex-col items-center justify-center text-center min-h-[60vh]">
+   <section className="relative min-h-[75vh] overflow-hidden py-16">
 
-      {/* HEADING */}
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white drop-shadow-lg animate-fade-up">
-        Transform Spaces with{" "}
-        <span className="text-orange-400">
-          Premium Container Solutions
-        </span>
-      </h1>
+{/* 🎥 VIDEO BACKGROUND */}
+<video
+  className="absolute inset-0 w-full h-full object-cover"
+  src="/video/video.mov"
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="auto"
+/>
 
-      {/* ✅ TYPING PARAGRAPH */}
-      <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-3xl drop-shadow animate-fade-up delay-1">
-        {typedParagraph}
-      </p>
+{/* 🌑 DARK OVERLAY (for text readability) */}
+<div className="absolute inset-0 bg-black/35"></div>
 
-      {/* BUTTONS */}
-      <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-2">
-        <button
-          onClick={() => onNavigate("contact")}
-          className="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-700 transition-colors flex items-center justify-center gap-2"
-        >
-          Get Free Consultation
-          <ArrowRight size={20} />
-        </button>
+{/* CONTENT */}
+<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="flex flex-col items-center justify-center text-center min-h-[60vh]">
 
-        <a
-          href="tel:+918758176693"
-          className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2"
-        >
-          <PhoneCall size={20} />
-          Call Now
-        </a>
-      </div>
+    {/* HEADING */}
+    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white drop-shadow-lg animate-fade-up">
+      Transform Spaces with{" "}
+      <span className="text-orange-400">
+        Premium Container Solutions
+      </span>
+    </h1>
 
+    {/* ✅ TYPING PARAGRAPH */}
+    <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-3xl drop-shadow animate-fade-up delay-1">
+      {typedParagraph}
+    </p>
+
+    {/* BUTTONS */}
+    <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-2">
+      <button
+        onClick={() => onNavigate("contact")}
+        className="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-700 transition-colors flex items-center justify-center gap-2"
+      >
+        Get Free Consultation
+        <ArrowRight size={20} />
+      </button>
+
+      <a
+        href="tel:+918758176693"
+        className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2"
+      >
+        <PhoneCall size={20} />
+        Call Now
+      </a>
     </div>
+
   </div>
+</div>
 </section>
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
