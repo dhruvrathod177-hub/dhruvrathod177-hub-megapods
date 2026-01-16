@@ -1,4 +1,23 @@
-import { Coffee, Building2, DoorOpen, Box, CheckCircle, Users, Award, Clock, ArrowRight, Phone } from 'lucide-react';
+import { Coffee, Building2, DoorOpen, Box, CheckCircle, Users, Award, Clock, ArrowRight, PhoneCall } from 'lucide-react';
+import { useEffect, useState } from "react";
+
+function useTypewriter(text: string, speed = 32) {
+  const [displayText, setDisplayText] = useState("");
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      setDisplayText(text.slice(0, index + 1));
+      index++;
+      if (index === text.length) clearInterval(interval);
+    }, speed);
+
+    return () => clearInterval(interval);
+  }, [text, speed]);
+
+  return displayText;
+}
+
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -42,29 +61,32 @@ export default function Home({ onNavigate }: HomeProps) {
     { icon: CheckCircle, title: 'Customizable', description: 'Fully tailored solutions to match your brand' },
   ];
 
+  const typedParagraph = useTypewriter(
+    "Megapods India specializes in innovative container conversions for cafes, offices, public toilets, and custom projects. Build your dream space with our expert modular solutions.",
+    32
+  ); 
   return (
     <div>
-     <section
+    <section
   className="relative min-h-[75vh] bg-cover bg-center bg-no-repeat py-16"
   style={{
     backgroundImage: "url('/img/img.png')",
   }}
 >
   <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
     <div className="flex flex-col items-center justify-center text-center min-h-[60vh]">
 
       {/* HEADING */}
       <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white drop-shadow-lg animate-fade-up">
         Transform Spaces with{" "}
-        <span className="text-orange-400">Premium Container Solutions</span>
+        <span className="text-orange-400">
+          Premium Container Solutions
+        </span>
       </h1>
 
-      {/* DESCRIPTION */}
+      {/* ✅ TYPING PARAGRAPH */}
       <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-3xl drop-shadow animate-fade-up delay-1">
-        Megapods India specializes in innovative container conversions for
-        cafes, offices, public toilets, and custom projects. Build your dream
-        space with our expert modular solutions.
+        {typedParagraph}
       </p>
 
       {/* BUTTONS */}
@@ -81,7 +103,7 @@ export default function Home({ onNavigate }: HomeProps) {
           href="tel:+918758176693"
           className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2"
         >
-          <Phone size={20} />
+          <PhoneCall size={20} />
           Call Now
         </a>
       </div>
