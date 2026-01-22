@@ -8,6 +8,8 @@ import Solutions from './pages/Solutions';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 
+
+
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
@@ -49,6 +51,7 @@ function App() {
       <main>{renderPage()}</main>
       <Footer onNavigate={setCurrentPage} />
       <WhatsAppButton />
+      
       
     </div>
     
